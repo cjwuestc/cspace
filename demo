@@ -1,0 +1,2 @@
+python /home/cjw/style-transfer/style.py -s  /home/cjw/style-transfer/images/style/starry_night.jpg -c /home/cjw/图片/uestc.jpg -g -1
+sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev libgflag

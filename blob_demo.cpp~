@@ -1,0 +1,11 @@
+#include <iostream>
+#include <caffe/blob.hpp>
+
+using namespace caffe;
+using namespace std;
+
+int main() {
+	Blob<int> blob;
+	blob.Reshape(1,2,3,4);
+	cout << blob.shape_string() << endl;
+}

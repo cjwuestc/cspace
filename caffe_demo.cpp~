@@ -1,0 +1,18 @@
+#include <iostream>
+#include <caffe/caffe.hpp>
+#include <caffe/common.hpp>
+
+int train(std::string solver_file) {
+  // resolve the solver file
+  caffe::SolverParameter solver_parameter;
+  caffe::ReadSolverParamsFromTextFileOrDie(solver_file, &solver_parameter);
+  
+  caffe::Caffe::set_mode(caffe::Caffe::CPU);
+  caffe::Solver<float> solver(caffe::SolverRegistry<float>::CreateSolver(solver_parameter));
+  solver.Solve();
+}
+
+int main() {
+  train("/home/cjw/caffe/examples/mnist/lenet_solver.prototxt");
+  return 0;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <caffe/blob.hpp>
+
+using namespace caffe;
+using namespace std;
+
+int main() {
+	const Blob<int> blob(1,2,3,4);
+	// blob.Reshape(1,2,3,4);
+	// cout << blob.shape_string() << endl;
+    const vector<int>* shape_ = &blob.shape();
+    vector<int> shape = const_cast<vector<int> >(*shape_);
+
+    /**
+    ostringstream stream;
+    for(vector<int>::iterator itr = shape_.begin() ; 
+            itr != shape_.end() ; itr++)
+        stream << *itr << " ";
+    cout << stream.str() <<endl;
+    */
+}
